@@ -2,9 +2,9 @@ angular
   .module('FootballClubManager')
   .factory('Fixture', Fixture);
 
-Fixture.$inject = ["$resource", "formData"];
-function Fixture($resource, formData) {
-  return $resource('/api/films/:id', { id: '@_id' },  {
+Fixture.$inject = ["$resource"];
+function Fixture($resource) {
+  return $resource('/api/fixtures/:id', { id: '@_id' },  {
     update: {
       method: "PUT",
       headers: { 'Content-Type': undefined },

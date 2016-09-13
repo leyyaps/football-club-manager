@@ -6,3 +6,5 @@ FixturesIndexController.$inject = ["Fixture"];
 function FixturesIndexController(Fixture) {
   this.all = Fixture.query();
 }
+
+

@@ -2,7 +2,10 @@ angular
   .module("FootballClubManager", ['ui.router', 'ngResource', 'angular-jwt'])
   .constant("API_URL", "http://localhost:8000/api")
   .config(setupInterceptor)
-  .config(Router);
+  .config(Router)
+  .config(function() {
+    Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+  });
 
 setupInterceptor.$inject = ["$httpProvider"];
 function setupInterceptor($httpProvider) {
@@ -32,9 +35,9 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: "/templates/users.html",
       controller: "UsersController as users"
     })
-    .state("fixtures", {
+    .state("fixturesIndex", {
       url: "/fixtures",
-      templateUrl: "/templates/fixtures.html",
+      templateUrl: "/templates/fixtures/index.html",
       controller: "FixturesIndexController as fixturesIndex"
     })
     .state("fixturesNew", {
@@ -43,12 +46,12 @@ function Router($stateProvider, $urlRouterProvider) {
       controller: "FixturesNewController as fixturesNew"
     })
     .state("fixturesShow", {
-      url: "/fixtures/show",
+      url: "/fixtures/:id",
       templateUrl: "/templates/fixtures/show.html",
       controller: "FixturesShowController as fixturesShow"
-    });
+    })
     .state("fixturesEdit", {
-      url: "/fixtures/edit",
+      url: "/fixtures/:id/edit",
       templateUrl: "/templates/fixtures/edit.html",
       controller: "FixturesEditController as fixturesEdit"
     });

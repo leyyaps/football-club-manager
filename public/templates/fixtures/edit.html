@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="col-md-6 offset-md-3 fixture-form" ng-submit="fixturesEdit.save()">
+    <h2>Update</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" name="opposition" ng-model="fixturesEdit.selected.opposition" placeholder="Opposition">
+    </div>
+    <div class="form-group">  
+      <input type="date" class="form-control" date name="date" ng-model="fixturesEdit.selected.date" placeholder="Date">
+    </div>
+    <div class="form-group">  
+      <input type="time" class="form-control" name="time" ng-model="fixturesEdit.selected.time" placeholder="Time">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="address1" ng-model="fixturesEdit.selected.address1" placeholder="Address 1">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="address2" ng-model="fixturesEdit.selected.address2" placeholder="Address 2">
+    </div>
+    <div class="form-group"> 
+      <input type="text" class="form-control" name="city" ng-model="fixturesEdit.selected.city" placeholder="City">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="postcode" ng-model="fixturesEdit.selected.postcode" placeholder="Postcode">
+    </div> 
+    <div class="form-group">  
+      <input type="text" class="form-control" name="kit_duty" ng-model="fixturesEdit.selected.kit_duty" placeholder="Kit Duty">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="other_notes" ng-model="fixturesEdit.selected.other_notes" placeholder="Other notes">
+    </div>
+
+      <button class="btn btn-primary">Save</button>
+      <button class="btn btn-secondary" type="button" ui-sref="fixturesShow({ id: fixturesEdit.selected._id })">Cancel</button>
+  </form>
+</div>

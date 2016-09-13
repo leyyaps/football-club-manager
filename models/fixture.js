@@ -6,7 +6,7 @@ var User = require('../models/user');
 var fixtureSchema = new mongoose.Schema({
 
   opposition: { type: String, required: true, unique: true },
-  date: { type: Date, required: true, unique: true },
+  date: { type: Date, required: true },
   time: { type: String, required: true, unique: true },
   home: { type: Boolean },
   address1: { type: String },

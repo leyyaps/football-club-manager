@@ -1,0 +1,18 @@
+<div class="container">
+<h1>Fixtures</h1>
+
+<a ui-sref="fixturesNew">New</a>
+<p>HELLO I AM THE FIXTURE PAGE</p>
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="fixture in fixturesIndex.all" ui-sref="fixturesShow({id: fixture._id})">
+    <div class="card">
+      <img class="card-img-top" src="http://fillmurray.com/200/200" alt="Profile Picture">
+      <div class="card-block">
+        <h4 class="card-title">{{ fixture.opposition }}</h4>
+        <p class="card-text">{{ fixture.date | date:'EEEE dd MMMM yyyy'  }}</p>
+        <p class="card-text">{{ fixture.time | date:'EEEE dd MMMM yyyy'  }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
