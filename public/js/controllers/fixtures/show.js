@@ -32,13 +32,15 @@ function FixturesShowController(Fixture, $state, TokenService, $rootScope) {
     var index = self.selected.players.findIndex(function(player) {
       return player._id === self.selected._id;
     });
-
-    self.selected.players.splice(index, 1);
-    this.selected.$update(function(fixture){
-      $rootScope.$applyAsync(function() {
-        self.selected = fixture;
+   
+    if(index >= -1) {
+      self.selected.players.splice(index, 1);
+      this.selected.$update(function(fixture){
+        $rootScope.$applyAsync(function() {
+          self.selected = fixture;
+        });
       });
-    });
+    }
   }
 
   this.delete = function() {
@@ -49,36 +51,3 @@ function FixturesShowController(Fixture, $state, TokenService, $rootScope) {
 }
 
 
-
-
-
-// function availabilityController(Fixture, $state){
-
-//   this.selected = Fixture.get($state.params);
-
-//   var self = this;
-
-//   self.addPlayer = addPlayer;
-//   self.removePlayer = removePlayer;
-//   self.playersAvailable = playersAvailable;
-//   self.notResponded = notResponded;
-
-
-//   function addPlayer(){
-//     self.players.push({task: self.text, done: false});
-//     self.text = null;
-//   }
-
-//   function removePlayer($index){
-//     self.players.splice($index, 1);
-//   }
-
-//   function playersAvailable(){
-//     return self.players.filter(function(x){ return x.done == true; })
-//   }
-
-//   function notResponded(){
-//     return self.players.filter(function(x){ return x.done == false; })
-//   }
-
-// }

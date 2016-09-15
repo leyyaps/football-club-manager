@@ -22,7 +22,8 @@ function gMap() {
         if(!map && scope.center && scope.center.lat && scope.center.lng) {
           map = new google.maps.Map(element[0], {
             center: scope.center,
-            zoom: 14
+            zoom: 14,
+            scrollwheel: false
           });
 
           new google.maps.Marker({

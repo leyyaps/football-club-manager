@@ -1,12 +1,14 @@
-<div class="container">
+<div class="container animated slideInUp">
 <h2 class="titles">Fixtures</h2>
 
 <a ng-if="main.currentUser.isAdmin" ui-sref="fixturesNew"><i class="fa fa-plus-square fa-3x" aria-hidden="true"></i></a>
 <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="fixture in fixturesIndex.all" ui-sref="fixturesShow({id: fixture._id})">
     <div class="card">
-      <img class="card-img-top" src="http://fillmurray.com/200/200" alt="Profile Picture">
+      <img class="card-img-top" src="http://img.photobucket.com/albums/v689/viking99/forums/footballpitch.jpg" alt="Profile Picture">
       <div class="card-block">
+        <h4 class="burgandy card-title">FC Banterlona</h4>
+        <small>vs</small>
         <h4 class="card-title">{{ fixture.opposition }}</h4>
         <p class="card-text">{{ fixture.date | date:'EEEE dd MMMM yyyy'  }}</p>
         <p class="card-text">{{ fixture.time | date:'shortTime' }}</p>
