@@ -11,7 +11,7 @@ function RegisterController(User, $state, $rootScope) {
     console.log(this.user)
     User.register(this.user, function(res) {
       $rootScope.$broadcast("loggedIn");
-      $state.go("home");
+      $state.go("fixturesIndex");
     });
   }
 

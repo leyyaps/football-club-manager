@@ -1,49 +1,44 @@
-
-
-
 <div class="container">
   <g-map center="fixturesShow.mapCenter"></g-map>
+  <button ng-if="main.currentUser.isAdmin" class="btn btn-primary" ui-sref="fixturesEdit({ id: fixturesShow.selected._id })">Edit</button>
+  <h2 class="oppo">FC Banterlona VS {{ fixturesShow.selected.opposition }}</h2>
+  <h3>{{ fixturesShow.selected.date | date:'EEEE dd MMMM yyyy' }}</h3>
+  <h3 class="kickoff">Kick-off: {{ fixturesShow.selected.time | date:'shortTime' }}</h3>
+  <h3>{{ fixturesShow.selected.ground[0].name }}</h3>
 
-
-
-
-
-<h1>{{ fixturesShow.selected.opposition }}</h1>
-
-<h2>{{ fixturesShow.selected.date | date:'EEEE dd MMMM yyyy' }}</h2>
-<h3>{{ fixturesShow.selected.time | date:'shortTime' }}</h3>
-<h3>{{ fixturesShow.selected.ground[0].name }}</h3>
-<h3>{{ fixturesShow.selected.ground[0].lat }}</h3>
 
 
   
 
-<div class="availablePlayers">
-  <ul>
-    <li ng-repeat="player in fixturesShow.selected.players">{{ player.firstName }} {{ player.lastName }}</li>
-  </ul>
-  <div><strong>
-    Total: {{ fixturesShow.selected.players.length }}</strong>
+  <div class="availablePlayers">
+    <h5><strong>The Team</strong></h5>
+    <ul>
+      <li ng-repeat="player in fixturesShow.selected.players">{{ player.firstName }} {{ player.lastName }}</li>
+    </ul>
+    <div class="total"><strong>
+      Total: {{ fixturesShow.selected.players.length }}</strong>
+    </div>
   </div>
-</div>
-
-<button ng-if="!fixturesShow.isPlaying()" class="btn btn-primary" ng-click="fixturesShow.available()">Available!</button>
-
-<button ng-if="fixturesShow.isPlaying()" ng-click="fixturesShow.remove()" class="btn btn-secondary">Remove me</button>
-<br>
 
 
+  <button ng-if="!fixturesShow.isPlaying()" class="btn btn-primary" ng-click="fixturesShow.available()">Available!</button>
 
-</div>
-<button ng-if="main.currentUser.isAdmin" class="btn btn-primary" ui-sref="fixturesEdit({ id: fixturesShow.selected._id })">Edit</button>
-</div>
+
+  <button ng-if="fixturesShow.isPlaying()" ng-click="fixturesShow.remove()" class="btn btn-secondary">Remove me</button>
+
+
+
+
+
+
+
 
 <!-- Button trigger modal -->
-<div class="container">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Pay now
   </button>
-</div>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -56,7 +51,7 @@
       </div>
       <div class="modal-body">
         <div ng-controller="PaymentController as payment">
-            <h1>Stripe Payment Form</h1>
+            <h1>Banter Pay</h1>
             {{payment.Form.$submitted}}
             <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
               <div class="row">
@@ -129,10 +124,10 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
-
+</div>

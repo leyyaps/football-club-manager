@@ -26,11 +26,11 @@ User.create([
     isAdmin: true
   },{
    
-    email: "bob@bob.com",
+    email: "rich@montague.com",
     password: "password",
     passwordConfirmation: "password",
-    firstName: "Bob",
-    lastName: "thebuilder",
+    firstName: "Rich",
+    lastName: "Montague",
     mobile: "07800100100",
     position: "Defence",
     address1: "Flat 12, St Ronans",
@@ -38,14 +38,29 @@ User.create([
     city: "London",
     postcode: "SW15 3NR",
     goalsScored: 3,
+    isAdmin: true
+  },{
+   
+    email: "stuart@garratt.com",
+    password: "password",
+    passwordConfirmation: "password",
+    firstName: "Stuart",
+    lastName: "Garratt",
+    mobile: "07800100100",
+    position: "Midfield",
+    address1: "Flat 12, St Ronans",
+    address2: "63-65 Putney Hill",
+    city: "London",
+    postcode: "SW15 3NR",
+    goalsScored: 10,
     isAdmin: false
   },{
    
-    email: "dave@dave.com",
+    email: "graeme@catlin.com",
     password: "password",
     passwordConfirmation: "password",
-    firstName: "Dave",
-    lastName: "theRave",
+    firstName: "Graeme",
+    lastName: "Catlin",
     mobile: "07800100100",
     position: "Midfield",
     address1: "Flat 12, St Ronans",
@@ -76,6 +91,18 @@ Ground.create([
     lat: 51.552961,
     lng: -0.025267,
     postcode: "E9 5PF"
+  },
+  {
+    name: "King Georges Park",
+    lat: 51.449717,
+    lng: -0.193756,
+    postcode: "SW18"
+  },
+  {
+    name: "Holland Park",
+    lat: 51.500978,
+    lng: -0.201533,
+    postcode: "W8 6LU"
   }
 
   ],
@@ -84,10 +111,10 @@ Ground.create([
 console.log(err);
 
 Fixture.create([
-  {
-      opposition: "Liverpool Football Club",
-      date: "2009-01-06",
-      time: "10:30:00",
+    {
+      opposition: "Park Life FC",
+      date: "2016-09-17",
+      time: "10:30",
       home: true,
       ground: grounds[0],
       players: users,
@@ -97,17 +124,41 @@ Fixture.create([
       goal_scorers:[],
     }, 
     {
-      opposition: "Gooners",
-      date: "2010-01-06",
-      time: "10:00:00",
+      opposition: "Goonfellas FC",
+      date: "2016-09-24",
+      time: "10:00",
+      home: false,
+      ground: grounds[2],
+      players: users,
+      other_notes:"",
+      kit_duty: "Joe Millyard",
+      score:"0-0",
+      goal_scorers:[],
+
+    },
+    {
+      opposition: "History Old Boys",
+      date: "2016-10-01",
+      time: "10:30",
+      home: true,
+      ground: grounds[3],
+      players: users,
+      other_notes:"",
+      kit_duty: "Andrew Smith",
+      score:"0-0",
+      goal_scorers:[],
+    },
+    {
+      opposition: "The Midas Touch",
+      date: "2016-10-08",
+      time: "10:30",
       home: true,
       ground: grounds[1],
       players: users,
       other_notes:"",
-      kit_duty: "Steven Gerrard",
+      kit_duty: "Stuart Garratt",
       score:"0-0",
       goal_scorers:[],
-
     }
   ],
 
