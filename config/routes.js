@@ -5,6 +5,7 @@ var usersController = require('../controllers/users');
 var authController = require('../controllers/authentications');
 var fixturesController = require('../controllers/fixtures');
 var paymentController = require('../controllers/paymentController');
+var groundsController = require('../controllers/grounds');
 
 function secureRoute(req, res, next) {
   if(!req.headers.authorization) return res.status(401).json({ message: "You are Unauthorized" });
@@ -18,6 +19,13 @@ function secureRoute(req, res, next) {
     next();
   });
 }
+
+router.route('/grounds')
+  .get(groundsController.index);
+
+router.route('/grounds/:id')
+  .get(groundsController.show);
+  
 
 router.route('/payment')
   .post(paymentController.payment);

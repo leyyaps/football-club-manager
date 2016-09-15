@@ -9,15 +9,12 @@ var fixtureSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   time: { type: String, required: true, unique: true },
   home: { type: Boolean },
-  address1: { type: String },
-  address2: { type: String },
-  city: { type: String },
-  postcode: {type: String },
-  players:[{ type: String }],
-  other_notes: {type: String },
-  kit_duty: {type: String },
-  score: {type: String },
-  goal_scorers:[{ type: String }],
+  ground: { type: mongoose.Schema.ObjectId, ref: 'Ground' },
+  players: [{ type: mongoose.Schema.ObjectId, ref:'User' }],
+  other_notes: { type: String },
+  kit_duty: { type: String },
+  score: { type: String },
+  goal_scorers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
 
 });
 

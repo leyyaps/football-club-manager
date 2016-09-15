@@ -12,7 +12,7 @@ function LoginController(User, $state, $rootScope) {
       User.login(this.credentials, function(res) {
    
         $rootScope.$broadcast("loggedIn");
-          $state.go("home")
+          $state.go("fixturesIndex")
       });
   }
 

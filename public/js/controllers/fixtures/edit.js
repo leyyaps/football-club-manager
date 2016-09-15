@@ -2,13 +2,14 @@ angular
   .module('FootballClubManager')
   .controller("FixturesEditController", FixturesEditController);
 
-FixturesEditController.$inject = ["Fixture", "$state"];
-function FixturesEditController(Fixture, $state ) {
+FixturesEditController.$inject = ["Fixture", "$state", "Ground"];
+function FixturesEditController(Fixture, $state, Ground ) {
   this.selected = Fixture.get($state.params);
-  var self = this;
-  self.save = function() {
+  this.grounds = Ground.query();
+  
+  this.save = function() {
     
-    self.selected.$update(function() {
+    this.selected.$update(function() {
 
       $state.go('fixturesShow', $state.params);
     });

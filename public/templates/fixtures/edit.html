@@ -8,20 +8,15 @@
       <input type="date" class="form-control" date name="date" ng-model="fixturesEdit.selected.date" placeholder="Date">
     </div>
     <div class="form-group">  
-      <input type="time" class="form-control" name="time" ng-model="fixturesEdit.selected.time" placeholder="Time">
+      <input type="time" date class="form-control" name="time" ng-model="fixturesEdit.selected.time" placeholder="Time">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" name="address1" ng-model="fixturesEdit.selected.address1" placeholder="Address 1">
+      <select name="ground" ng-model="fixturesEdit.selected.ground">
+        <option disabled selected value="">Please select</option>
+        <option ng-value="ground._id" ng-repeat="ground in fixturesEdit.grounds" ng-selected="ground._id === fixturesEdit.selected.ground._id">{{ground.name}}</option>
+      </select>
+      
     </div>
-    <div class="form-group">
-      <input type="text" class="form-control" name="address2" ng-model="fixturesEdit.selected.address2" placeholder="Address 2">
-    </div>
-    <div class="form-group"> 
-      <input type="text" class="form-control" name="city" ng-model="fixturesEdit.selected.city" placeholder="City">
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" name="postcode" ng-model="fixturesEdit.selected.postcode" placeholder="Postcode">
-    </div> 
     <div class="form-group">  
       <input type="text" class="form-control" name="kit_duty" ng-model="fixturesEdit.selected.kit_duty" placeholder="Kit Duty">
     </div>

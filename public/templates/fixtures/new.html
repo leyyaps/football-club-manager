@@ -12,16 +12,10 @@
     <input type="time" class="form-control" name="time" ng-model="fixturesNew.new.time" placeholder="Time">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" name="address1" ng-model="fixturesNew.new.address1" placeholder="Address 1">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" name="address2" ng-model="fixturesNew.new.address2" placeholder="Address 2">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" name="city" ng-model="fixturesNew.new.city" placeholder="City">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" name="postcode" ng-model="fixturesNew.new.postcode" placeholder="Postcode">
+  <select class="form-control" name="ground" ng-model="fixturesNew.new.ground">
+    <option disabled selected value="">Please select</option>
+    <option ng-repeat="ground in fixturesNew.grounds" ng-value="ground._id">{{ground.name}}</option>
+  </select>
   </div>
   <div class="form-group">
     <input type="text" class="form-control" name="kit_duty" ng-model="fixturesNew.new.kit_duty" placeholder="Kit Duty">

@@ -12,6 +12,7 @@ function fixtureIndex(req, res) {
 
 function fixtureShow(req, res) {
   Fixture.findById(req.params.id)
+    .populate('ground players')
     .then(function(fixture) {
       res.status(200).json(fixture);
     })
@@ -22,6 +23,10 @@ function fixtureShow(req, res) {
 
 function fixtureCreate(req, res) {
   Fixture.create(req.body)
+  .then(function(fixture) {
+    return Fixture.findById(fixture._id)
+      .populate('ground players');
+    })
     .then(function(fixture) {
       res.status(201).json(fixture);
     })
@@ -30,11 +35,18 @@ function fixtureCreate(req, res) {
     });
 }
 
+
+
 function fixtureUpdate(req, res) {
+  console.log(req.body);
   Fixture.findById(req.params.id)
     .then(function(fixture) {
       for(key in req.body) fixture[key] = req.body[key];
       return fixture.save();
+    })
+    .then(function(fixture) {
+      return Fixture.findById(fixture._id)
+        .populate('ground players');
     })
     .then(function(fixture) {
       res.status(200).json(fixture);

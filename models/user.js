@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
   city: { type: String },
   postcode: { type: String },
   goalsScored: { type: Number },
-  isAdmin: { type: Boolean }
+  isAdmin: { type: Boolean, default: false }
 });
 
 userSchema.set('toJSON', {
