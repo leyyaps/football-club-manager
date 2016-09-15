@@ -50,7 +50,7 @@
   <link rel="stylesheet" href="/css/style.css">
 
 </head>
-<body ng-controller="MainController as main">
+<body id="top" ng-controller="MainController as main">
   <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand nav-link" ui-sref="home"><img class="img-responsive" src="/images/fcb_logo.png"></a>
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,13 @@
   
 
   <main class="" ui-view></main>
-
+  
+  <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+  <div class="container">
+    One team one dream...
+    </div>
+  </nav>
+  
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGAvELEuVYIx5w2VyVuWxm9MiNmdl3njA"></script>
   
   

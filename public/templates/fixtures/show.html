@@ -3,13 +3,11 @@
   <button ng-if="main.currentUser.isAdmin" class="btn btn-primary" ui-sref="fixturesEdit({ id: fixturesShow.selected._id })">Edit</button>
   <h2 class="oppo">FC Banterlona VS {{ fixturesShow.selected.opposition }}</h2>
   <h3>{{ fixturesShow.selected.date | date:'EEEE dd MMMM yyyy' }}</h3>
+  <h3>{{ fixturesShow.selected.ground.name }}</h3>
   <h3 class="kickoff">Kick-off: {{ fixturesShow.selected.time | date:'shortTime' }}</h3>
-  <h3>{{ fixturesShow.selected.ground[0].name }}</h3>
+  
   <p>Kit Duty: {{ fixturesShow.selected.kit_duty }}</p>
 
-
-
-  
 
   <div class="availablePlayers">
     <h5><strong>The Team</strong></h5>
@@ -19,6 +17,10 @@
     <div class="total"><strong>
       Total: {{ fixturesShow.selected.players.length }}</strong>
     </div>
+  </div>
+  <div ng-if="fixturesShow.selected.other_notes">
+    <p>Other notes:</p>
+    <p>{{ fixturesShow.selected.other_notes }}</p>
   </div>
 
 

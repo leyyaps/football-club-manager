@@ -15,6 +15,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
 }
+main {
+  margin-bottom: 2em;
+}
 h4, h3 {
   color: #013378;
 }
@@ -91,6 +94,9 @@ button.navbar-toggler {
 
 form.fixture-form {
   margin-top: 3em;
+}
+.navbar-light .navbar-brand{
+  color: #fff;
 }
 
 .burgandy {
