@@ -120,7 +120,7 @@ h1#title1{
   font-family: 'Baloo Tamma', cursive;
   font-size: 9vw;
   color: #fff;
-  overflow: hidden;
+ 
 }
 
 h1#title2{
@@ -151,7 +151,7 @@ h1#title3{
 
 .football {
   position: absolute;
-  left: 25%;
+  left: 15%;
   top: 20%;
   transform: translate(-40%,-20%);
   z-index: 2;
@@ -172,7 +172,7 @@ h1#title3{
 
 .manager {
   position: absolute;
-  left: 20%;
+  left: 10%;
   top: 60%;
   transform: translate(-40%,-20%);
   z-index: 2;
@@ -249,6 +249,16 @@ h1#title3{
   ul.nav.navbar-nav{
     text-align: center;
 
+  }
+  h1#title1{
+    font-size:5em;
+  }
+  h1#title2{
+    font-size:5em;
+  }
+
+  h1#title3{
+    font-size:5em;
   }
 
  }
