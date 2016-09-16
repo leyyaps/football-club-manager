@@ -1,6 +1,6 @@
 angular
   .module("FootballClubManager", ['ui.router', 'ngResource', 'angular-jwt'])
-  .constant("API_URL", "http://localhost:8000/api")
+  .constant("API_URL", "/api")
   .config(setupInterceptor)
   .config(Router)
   .config(function() {
